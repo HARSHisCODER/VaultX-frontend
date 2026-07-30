@@ -1,0 +1,108 @@
+/* Motion layer for the auth experience */
+.ambient-one {
+  animation: orbit 16s var(--ease-smooth) infinite alternate;
+}
+
+.ambient-two {
+  animation: orbit 20s -8s var(--ease-smooth) infinite alternate-reverse;
+}
+
+.ambient-three {
+  animation: float-orb 13s var(--ease-smooth) infinite alternate;
+}
+
+.particle {
+  animation: particle-drift var(--duration) var(--delay) var(--ease-smooth) infinite;
+}
+
+.page-shell:not(.motion-ready) .login-card {
+  animation: card-enter 0.9s var(--ease-out) both;
+}
+
+.login-card::before {
+  animation: card-sheen 8s 1.2s var(--ease-smooth) infinite;
+}
+
+.secure-status i {
+  animation: status-pulse 2.5s var(--ease-smooth) infinite;
+}
+
+.field-wrap.is-typing .field-icon {
+  animation: icon-typing 0.52s var(--ease-out);
+}
+
+.sign-in.loading::after {
+  animation: spin 0.7s var(--ease-smooth) infinite;
+}
+
+.ripple {
+  animation: ripple-expand 0.72s var(--ease-out) forwards;
+}
+
+.modal.is-open .modal-card {
+  animation: sheet-enter 0.45s var(--ease-out) both;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes card-sheen {
+  0%, 35% { left: -80%; }
+  62%, 100% { left: 140%; }
+}
+
+@keyframes orbit {
+  from { transform: translate3d(0, 0, 0) rotate(0); }
+  to { transform: translate3d(30px, 18px, 0) rotate(18deg); }
+}
+
+@keyframes float-orb {
+  from { transform: translate3d(0, 0, 0) scale(0.9); }
+  to { transform: translate3d(48px, -28px, 0) scale(1.12); }
+}
+
+@keyframes status-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(0.88); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes particle-drift {
+  0% { opacity: 0; transform: translate3d(0, 25px, 0) scale(0.65); }
+  18%, 82% { opacity: var(--opacity); }
+  100% { opacity: 0; transform: translate3d(var(--drift-x), -120px, 0) scale(1.08); }
+}
+
+@keyframes icon-typing {
+  0% { transform: translateX(0) rotate(0); }
+  35% { transform: translateX(2px) rotate(8deg) scale(1.11); }
+  100% { transform: translateX(0) rotate(0); }
+}
+
+@keyframes ripple-expand {
+  to { opacity: 0; transform: translate(-50%, -50%) scale(23); }
+}
+
+@keyframes sheet-enter {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
