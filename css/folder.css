@@ -1,0 +1,4 @@
+.breadcrumbs { display: flex; align-items: center; gap: 8px; color: var(--muted); margin-bottom: 12px; }
+.upload-area { display: grid; place-items: center; min-height: 180px; border: 1px dashed var(--line); border-radius: 20px; background: rgba(255,255,255,.04); color: var(--muted); }
+.preview-pane { display: grid; gap: 12px; }
+.preview-card { padding: 16px; border-radius: 18px; border: 1px solid var(--line-soft); background: rgba(255,255,255,.04); }

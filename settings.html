@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VaultX — Settings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/global.css" />
+  </head>
+  <body>
+    <div class="layout-shell">
+      <aside class="sidebar">
+        <div>
+          <a class="brand" href="dashboard.html">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.25 29.75 7.5v8.68c0 7.48-4.75 13.74-11.75 16.57C11 29.92 6.25 23.66 6.25 16.18V7.5L18 3.25Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" /><path d="m12.7 18.05 3.4 3.4 7.3-7.55" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+            <span>Vault<span>X</span></span>
+          </a>
+          <p class="brand-sub">Private storage</p>
+          <nav class="nav-list" aria-label="Primary">
+            <a class="nav-item" href="dashboard.html"><span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 10.5 12 4l8 6.5v8A1.5 1.5 0 0 1 18.5 20h-11A1.5 1.5 0 0 1 6 18.5v-8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>Overview</a>
+            <a class="nav-item" href="files.html"><span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4.5 6.5A1.5 1.5 0 0 1 6 5h5l2 2h5a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 18 18H6a1.5 1.5 0 0 1-1.5-1.5v-10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>My Files</a>
+            <a class="nav-item" href="folder.html"><span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h4l2 2h5a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>Folder</a>
+            <a class="nav-item" href="recent.html"><span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/></svg></span>Recent</a>
+            <a class="nav-item" href="favorites.html"><span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5.5 14.2 9l3.8.6-2.8 2.7.7 3.8L12 14.7 8.1 16.1l.7-3.8L6 9.6 9.8 9 12 5.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>Favorites</a>
+            <a class="nav-item" href="profile.html"><span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 18.5a6.5 6.5 0 0 1 13 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>Profile</a>
+          </nav>
+        </div>
+        <div class="tag">Encrypted workspace</div>
+      </aside>
+      <main class="main-pane">
+        <header class="topbar">
+          <label class="search-bar" for="search">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <input id="search" type="text" placeholder="Search files and folders" />
+          </label>
+          <div class="topbar-actions">
+            <a class="profile-pill" href="profile.html"><span class="avatar">A</span><span>Alex</span></a>
+          </div>
+        </header>
+        <section class="content-stack">
+          <div class="hero-card">
+            <p class="eyebrow">Workspace</p>
+            <h1>Settings</h1>
+            <p>Keep the vault polished and ready for your next upload.</p>
+          </div>
+          <div class="card grid-two">
+            <div class="row-item"><div><strong>Auto-lock</strong><p>Enabled after 15 minutes</p></div><span class="tag">Secure</span></div>
+            <div class="row-item"><div><strong>Notifications</strong><p>Only critical events</p></div><span class="tag">Quiet</span></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/explorer.js"></script>
+  </body>
+</html>

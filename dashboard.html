@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="VaultX dashboard for secure self-hosted cloud storage" />
+    <title>VaultX — Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <div class="ambient ambient-three"></div>
+      <div class="grid-haze" aria-hidden="true"></div>
+      <div class="particle-field" aria-hidden="true">
+        <span class="particle"></span><span class="particle"></span><span class="particle"></span>
+        <span class="particle"></span><span class="particle"></span><span class="particle"></span>
+      </div>
+
+      <aside class="sidebar">
+        <div class="brand-block">
+          <a class="brand" href="#" aria-label="VaultX home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 36 36" fill="none">
+                <path d="M18 3.25 29.75 7.5v8.68c0 7.48-4.75 13.74-11.75 16.57C11 29.92 6.25 23.66 6.25 16.18V7.5L18 3.25Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" />
+                <path d="m12.7 18.05 3.4 3.4 7.3-7.55" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span>Vault<span>X</span></span>
+          </a>
+          <p class="brand-caption">Private cloud studio</p>
+        </div>
+
+        <nav class="nav-list" aria-label="Main navigation">
+          <a class="nav-item active" href="dashboard.html" data-view="dashboard" data-page="dashboard.html" aria-current="page">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
+            </span>
+            <span>Dashboard</span>
+          </a>
+          <a class="nav-item" href="files.html" data-view="files" data-page="files.html">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5.5 4.5h13a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6"/><path d="M8 8h8M8 12h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            <span>My Files</span>
+          </a>
+          <a class="nav-item" href="recent.html" data-view="recent" data-page="recent.html">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 6.5h16M7 4.5v4M17 4.5v4M5.5 9.5h13a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-6.5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6"/></svg>
+            </span>
+            <span>Recent</span>
+          </a>
+          <a class="nav-item" href="favorites.html" data-view="favorites" data-page="favorites.html">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12.5 5.5 7 10.5l5.5 5.5 5.5-5.5-5.5-5Z" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 15.5 12 22l6.5-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            <span>Favorites</span>
+          </a>
+          <a class="nav-item" href="shared.html" data-view="shared" data-page="shared.html">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9 8.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Zm6 0a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Zm-6 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Zm6 0a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z" stroke="currentColor" stroke-width="1.6"/></svg>
+            </span>
+            <span>Shared</span>
+          </a>
+        </nav>
+
+      </aside>
+
+      <div class="main-panel">
+        <header class="topbar">
+          <label class="search-bar" aria-label="Search dashboard">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="5.5" stroke="currentColor" stroke-width="1.6"/><path d="m15 15 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <input type="text" placeholder="Search vault, files, notes" />
+          </label>
+
+          <div class="topbar-actions">
+            <button class="upload-btn" type="button">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v10M12 5l-4 4M12 5l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 14v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <span>Upload</span>
+            </button>
+            <button class="icon-btn bell" type="button" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.5 8.5a4.5 4.5 0 0 1 9 0c0 4 1.5 5 1.5 5H6c0 0 1.5-1 1.5-5Z" stroke="currentColor" stroke-width="1.6"/><path d="M10 18a2 2 0 0 0 4 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </button>
+            <button class="profile-pill" type="button" aria-label="User profile">
+              <span class="avatar">AL</span>
+              <span class="profile-meta">
+                <strong>Alina</strong>
+                <small>Owner</small>
+              </span>
+            </button>
+          </div>
+        </header>
+
+        <main class="dashboard-content">
+          <section id="view-dashboard" class="view-panel active">
+            <section class="card hero-card reveal" style="--delay: .04s;">
+              <div class="hero-copy">
+                <p class="eyebrow">GATEWAY TO YOUR PRIVATE CLOUD</p>
+                <h1>Everything in place, ready to move.</h1>
+                <p class="hero-subcopy">Curated storage, secure collaboration, and instant access across every device.</p>
+              </div>
+              <div class="hero-metrics">
+                <div class="metric-pill"><strong>24</strong><span>Active shares</span></div>
+                <div class="metric-pill"><strong>12</strong><span>Connected devices</span></div>
+                <div class="metric-pill"><strong>99.98%</strong><span>Uptime</span></div>
+              </div>
+            </section>
+
+            <div class="content-grid">
+              <section class="card storage-card reveal" style="--delay: .1s;">
+                <div class="card-head">
+                  <div>
+                    <p class="eyebrow">STORAGE</p>
+                    <h2>Vault capacity</h2>
+                  </div>
+                  <span class="pill">Protected</span>
+                </div>
+                <div class="storage-body">
+                  <div class="storage-chart" aria-label="Storage usage chart">
+                    <div class="storage-chart-inner">
+                      <strong data-percentage>0%</strong>
+                      <span>used</span>
+                    </div>
+                  </div>
+                  <div class="storage-summary">
+                    <div>
+                      <span class="label">Used</span>
+                      <strong>2.4 TB</strong>
+                    </div>
+                    <div>
+                      <span class="label">Available</span>
+                      <strong>1.1 TB</strong>
+                    </div>
+                    <div>
+                      <span class="label">Backup</span>
+                      <strong>Daily</strong>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="card actions-card reveal" style="--delay: .16s;">
+                <div class="card-head">
+                  <div>
+                    <p class="eyebrow">QUICK ACTIONS</p>
+                    <h2>Start something</h2>
+                  </div>
+                </div>
+                <div class="action-list">
+                  <button class="action-btn" type="button">
+                    <span class="action-icon">✦</span>
+                    <span>Create folder</span>
+                  </button>
+                  <button class="action-btn" type="button">
+                    <span class="action-icon">↗</span>
+                    <span>Share link</span>
+                  </button>
+                </div>
+              </section>
+
+              <section class="card files-card reveal" style="--delay: .22s;">
+                <div class="card-head">
+                  <div>
+                    <p class="eyebrow">RECENT FILES</p>
+                    <h2>Latest drops</h2>
+                  </div>
+                  <a href="#files">View all</a>
+                </div>
+                <ul class="file-list">
+                  <li class="file-item">
+                    <span class="file-icon">◧</span>
+                    <div>
+                      <strong>Quarterly Brief.pdf</strong>
+                      <small>2 hours ago · 6.3 MB</small>
+                    </div>
+                    <button type="button" aria-label="Open file">⋯</button>
+                  </li>
+                  <li class="file-item">
+                    <span class="file-icon">⬢</span>
+                    <div>
+                      <strong>Design System.fig</strong>
+                      <small>Today · 42 MB</small>
+                    </div>
+                    <button type="button" aria-label="Open file">⋯</button>
+                  </li>
+                  <li class="file-item">
+                    <span class="file-icon">◍</span>
+                    <div>
+                      <strong>Studio Notes.txt</strong>
+                      <small>Yesterday · 914 KB</small>
+                    </div>
+                    <button type="button" aria-label="Open file">⋯</button>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="card favorites-card reveal" style="--delay: .28s;">
+                <div class="card-head">
+                  <div>
+                    <p class="eyebrow">FAVORITES</p>
+                    <h2>Favorite folders</h2>
+                  </div>
+                </div>
+                <div class="folder-grid">
+                  <article class="folder-card">
+                    <strong>Archive</strong>
+                    <span>42 items</span>
+                  </article>
+                  <article class="folder-card">
+                    <strong>Brand Kit</strong>
+                    <span>18 items</span>
+                  </article>
+                  <article class="folder-card">
+                    <strong>Client Work</strong>
+                    <span>29 items</span>
+                  </article>
+                  <article class="folder-card">
+                    <strong>Personal</strong>
+                    <span>11 items</span>
+                  </article>
+                </div>
+              </section>
+
+              <section class="card timeline-card reveal" style="--delay: .34s;">
+                <div class="card-head">
+                  <div>
+                    <p class="eyebrow">ACTIVITY</p>
+                    <h2>Recent timeline</h2>
+                  </div>
+                </div>
+                <ul class="timeline">
+                  <li>
+                    <span class="dot"></span>
+                    <div>
+                      <strong>Uploaded 3 photos</strong>
+                      <small>8 minutes ago</small>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="dot"></span>
+                    <div>
+                      <strong>Created secure share for Team</strong>
+                      <small>36 minutes ago</small>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="dot"></span>
+                    <div>
+                      <strong>Synced 2 devices</strong>
+                      <small>1 hour ago</small>
+                    </div>
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </section>
+
+          <section id="view-files" class="view-panel">
+            <section class="card hero-card reveal" style="--delay: .04s;">
+              <div class="hero-copy">
+                <p class="eyebrow">MY FILES</p>
+                <h1>Organized, searchable, and always protected.</h1>
+                <p class="hero-subcopy">Browse your latest documents, media, and vault assets in one calm workspace.</p>
+              </div>
+            </section>
+            <div class="content-grid single-column">
+              <section class="card reveal" style="--delay: .1s;">
+                <div class="card-head">
+                  <div>
+                    <p class="eyebrow">LIBRARY</p>
+                    <h2>Vault contents</h2>
+                  </div>
+                  <button class="action-btn compact" type="button">
+                    <span class="action-icon">✦</span>
+                    <span>Create folder</span>
+                  </button>
+                </div>
+                <div class="folder-grid">
+                  <article class="folder-card"><strong>Contracts</strong><span>12 files</span></article>
+                  <article class="folder-card"><strong>Media Kit</strong><span>8 files</span></article>
+                  <article class="folder-card"><strong>Archive</strong><span>24 files</span></article>
+                  <article class="folder-card"><strong>Design Assets</strong><span>19 files</span></article>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <section id="view-recent" class="view-panel">
+            <section class="card hero-card reveal" style="--delay: .04s;">
+              <div class="hero-copy">
+                <p class="eyebrow">RECENT</p>
+                <h1>Recently touched files and updates.</h1>
+                <p class="hero-subcopy">Pick up from where you left off without friction.</p>
+              </div>
+            </section>
+            <div class="content-grid single-column">
+              <section class="card reveal" style="--delay: .1s;">
+                <ul class="file-list">
+                  <li class="file-item"><span class="file-icon">◧</span><div><strong>Quarterly Brief.pdf</strong><small>2 hours ago · 6.3 MB</small></div><button type="button">⋯</button></li>
+                  <li class="file-item"><span class="file-icon">⬢</span><div><strong>Design System.fig</strong><small>Today · 42 MB</small></div><button type="button">⋯</button></li>
+                  <li class="file-item"><span class="file-icon">◍</span><div><strong>Studio Notes.txt</strong><small>Yesterday · 914 KB</small></div><button type="button">⋯</button></li>
+                </ul>
+              </section>
+            </div>
+          </section>
+
+          <section id="view-favorites" class="view-panel">
+            <section class="card hero-card reveal" style="--delay: .04s;">
+              <div class="hero-copy">
+                <p class="eyebrow">FAVORITES</p>
+                <h1>Your most important spaces, one tap away.</h1>
+                <p class="hero-subcopy">Pinned folders and starred files stay close at hand.</p>
+              </div>
+            </section>
+            <div class="content-grid single-column">
+              <section class="card reveal" style="--delay: .1s;">
+                <div class="folder-grid">
+                  <article class="folder-card"><strong>Archive</strong><span>42 items</span></article>
+                  <article class="folder-card"><strong>Brand Kit</strong><span>18 items</span></article>
+                  <article class="folder-card"><strong>Client Work</strong><span>29 items</span></article>
+                  <article class="folder-card"><strong>Personal</strong><span>11 items</span></article>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <section id="view-shared" class="view-panel">
+            <section class="card hero-card reveal" style="--delay: .04s;">
+              <div class="hero-copy">
+                <p class="eyebrow">SHARED</p>
+                <h1>Secure spaces built for collaboration.</h1>
+                <p class="hero-subcopy">Share with confidence and keep every exchange beautifully organized.</p>
+              </div>
+            </section>
+            <div class="content-grid single-column">
+              <section class="card reveal" style="--delay: .1s;">
+                <ul class="timeline">
+                  <li><span class="dot"></span><div><strong>Design critique ready</strong><small>With 3 collaborators</small></div></li>
+                  <li><span class="dot"></span><div><strong>Client launch assets shared</strong><small>Updated 45 min ago</small></div></li>
+                  <li><span class="dot"></span><div><strong>Board notes synced</strong><small>Visible to the product team</small></div></li>
+                </ul>
+              </section>
+            </div>
+          </section>
+
+          <section id="view-settings" class="view-panel">
+            <section class="card hero-card reveal" style="--delay: .04s;">
+              <div class="hero-copy">
+                <p class="eyebrow">SETTINGS</p>
+                <h1>Refine your vault experience.</h1>
+                <p class="hero-subcopy">Fine-tune protection, sync preferences, and workspace behavior.</p>
+              </div>
+            </section>
+            <div class="content-grid single-column">
+              <section class="card reveal" style="--delay: .1s;">
+                <div class="settings-list">
+                  <div class="setting-row"><div><strong>End-to-end encryption</strong><span>Always on</span></div><span class="pill">Enabled</span></div>
+                  <div class="setting-row"><div><strong>Auto backup</strong><span>Daily at 2:00 AM</span></div><span class="pill">Active</span></div>
+                  <div class="setting-row"><div><strong>Device approval</strong><span>Requires confirmation</span></div><span class="pill">Protected</span></div>
+                </div>
+              </section>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/explorer.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>
